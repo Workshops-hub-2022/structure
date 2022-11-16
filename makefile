@@ -10,10 +10,13 @@ NAME	=	structure
 FOLDER	=	src/
 
 SRCS	=	$(FOLDER)main.c \
+			$(FOLDER)warrior.c \
+			$(FOLDER)my_str.c \
+			$(FOLDER)arena.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
-CFLAGS	=	-Werror -Wall -Wextra -W -Iinclude
+CFLAGS	=	-Werror -Wall -Wextra -W -Iinclude -g3
 
 CC		=	gcc
 
