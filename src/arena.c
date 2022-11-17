@@ -10,8 +10,8 @@
 bool fight(warrior_t *warrior, warrior_t *enemy)
 {
     while (warrior->pv > 0 && enemy->pv > 0) {
-        warrior = attack(warrior, enemy);
-        enemy = attack(enemy, warrior);
+        attack(warrior, enemy);
+        attack(enemy, warrior);
     }
     if (warrior->pv < 0)
         return (false);
@@ -27,8 +27,8 @@ void arena(warrior_t *warrior)
     printf("Bienvenue dans l'arene champion %s\n", warrior->name);
     while (lvl < 2 && !lost) {
         lost = fight(warrior, enemy);
-        warrior = level_up(warrior);
-        enemy = level_up(enemy);
+        level_up(warrior);
+        level_up(enemy);
         lvl++;
         printf("Vous avez batu le champion n° %d\n", lvl);
     }
